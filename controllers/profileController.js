@@ -1,6 +1,6 @@
 const axios = require("axios");
 const db = require("../config/db");
-const { v4: uuidv4 } = require("uuid");
+const crypto = require("crypto");
 const getAgeGroup = require("../utils/ageGroup");
 
 exports.createProfile = async (req, res) => {
@@ -55,7 +55,7 @@ exports.createProfile = async (req, res) => {
         const topCountry = natRes.data.country[0];
 
         const profile = {
-          id: uuidv4(),
+          id: crypto.randomUUID(),
           name: name.toLowerCase(),
           gender: genderRes.data.gender,
           gender_probability: genderRes.data.probability,
