@@ -1,8 +1,11 @@
-require("dotenv").config({ path: ".env" });
+const path = require("path");
+require("dotenv").config({ path: path.resolve(__dirname, ".env") });
 const express = require("express");
 const cors = require("cors");
 const routes = require("./routes/profileRoutes");
 console.log("DB PASSWORD:", process.env.DB_PASSWORD);
+console.log("ENV FILE LOADED");
+console.log("DB USER:", process.env.DB_USER);
 
 
 const app = express();
