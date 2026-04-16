@@ -6,6 +6,8 @@ console.log("DB PASSWORD:", process.env.DB_PASSWORD);
 
 
 const app = express();
+const PORT = process.env.PORT || 3000;
+
 
 app.use(cors({ origin: "*" }));
 app.use(express.json());
