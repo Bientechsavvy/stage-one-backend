@@ -112,9 +112,11 @@ exports.createProfile = async (req, res) => {
           });
         });
       } catch (error) {
+        console.log("FULL ERROR:", error);
+
         return res.status(500).json({
           status: "error",
-          message: "Server error",
+          message: error.message,
         });
       }
     }
