@@ -1,7 +1,7 @@
 const axios = require("axios");
 const db = require("../config/db");
 const getAgeGroup = require("../utils/ageGroup");
-const { v7: uuidv7 } = require("uuid");
+const { v4: uuidv4 } = require("uuid");
 
 // ===============================
 // CREATE PROFILE (POST /profiles)
@@ -84,7 +84,7 @@ exports.createProfile = async (req, res) => {
         // BUILD PROFILE OBJECT
         // ===============================
         const profile = {
-          id: uuidv7(),
+          id: uuidv4(),
           name: cleanName,
           gender: genderRes.data.gender,
           gender_probability: genderRes.data.probability,
